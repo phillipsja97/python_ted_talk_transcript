@@ -1,8 +1,11 @@
+import sys
 import requests
 from bs4 import BeautifulSoup
 
-req = requests.get("https://www.ted.com/talks/mariana_atencio_what_makes_you_special/transcript")
+url = sys.argv[1]
+req = requests.get(url)
 text = req.text
 
 soup = BeautifulSoup(text, 'html.parser')
-print(soup.p)
+transcript = soup('p')
+print(soup)
