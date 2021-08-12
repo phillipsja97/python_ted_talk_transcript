@@ -9,3 +9,4 @@ text = req.text
 soup = BeautifulSoup(text, 'html.parser')
 transcript = soup('p')
 print(soup)
+
